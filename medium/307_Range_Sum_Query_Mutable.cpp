@@ -1,17 +1,3 @@
-/******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 307_Range_Sum_Query_Mutable.cpp
-*
-* Created on : 2017-08-09
-* Author : tufeng
-*
-* Last Modified : Wed 09 Aug 2017 11:31:12 PM PST
-******************************************************************************/
-
 #include <iostream>
 #include <vector>
 

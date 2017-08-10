@@ -1,17 +1,3 @@
-/******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 306_Additive_Number.cpp
-*
-* Created on : 2017-08-09
-* Author : tufeng
-*
-* Last Modified : Wed 09 Aug 2017 06:58:28 PM PST
-******************************************************************************/
-
 /***********************************************************************
  * additive number is a string whose digits can form additive sequence.
  *
@@ -30,6 +16,8 @@
  *
  * Follow up:
  * How would you handle overflow for very large input integers?
+ * 
+ * this question is not a good one.
  *********************************************************/
 
 #include <iostream>

@@ -37,50 +37,14 @@
 
 using namespace std;
 
-// dynamic programming
 class Solution {
 public:
     bool isAdditiveNumber(string num) {
         int size = num.length();
-        vector<bool> dp(size + 1, false);
-        dp[0] = true;
-        for (int i = 3; i <= size; ++i) {
-            for (int j = 3; j <= i; ++j) {
-                if (dp[i - j] && hasAdditiveNumber(num, i - j, i)) {
-                    dp[i] = true;
-                }
-            }
-        }
-        return dp[size];
-    }
-    
-private:
-    // determine if it is possible that we have additive number in slice [s, e)
-    bool hasAdditiveNumber(const string& num, int s, int e) const {
-        if (num[s] == '0') {
-            return false;
-        }
-        int size = e - s;
-        for (int i = 1; i <= size / 2; ++i) { // i is the size of the first number
-            int idx2 = s + i;
-            if (num[idx2] == '0') {
-                continue;
-            }
-            for (int j = 1; j <= size / 2; ++j) { // j is the second size
-                int k = size - i - j;
-                int max_size = max(i, j);
-                if (k < max_size) {
-                    break;
-                }
-                if (k > max_size + 1) {
-                    continue;
-                }
-                int idx3 = s + i + j;
-                if (num[idx3] == '0') {
-                    continue;
-                }
-                // check if it is additive
-                if (isAdditiveNumber(num, s, idx2, idx2, idx3, idx3, e)) {
+        // find the starting point
+        for (int i = 1; i <= size / 2; ++i) {
+            for (int j = 1; j <= size / 2; ++j) {
+                if ((i + j < size) && hasAdditiveNumber(num, 0, i, i, i + j)) {
                     return true;
                 }
             }
@@ -88,7 +52,32 @@ private:
         return false;
     }
     
+private:
+    // num1 is [s1, e1), num2 is [s2, e2)
+    bool hasAdditiveNumber(const string& num, int s1, int e1, int s2, int e2) const {
+        int size1 = e1 - s1;
+        int size2 = e2 - s2;
+        int k = max(size1, size2);
+        int remain_digit_num = num.length() - e2;
+        int max_k = min(remain_digit_num, k + 1); // not enough digits left in string for sum number
+        while (k <= max_k) {
+            if (isAdditiveNumber(num, s1, e1, s2, e2, e2, e2 + k)) {
+                bool ret = hasAdditiveNumber(num, s2, e2, e2, e2 + k);
+                if (ret) {
+                    return true;
+                }
+            }
+            ++k;
+        }
+        return max_k == 0; // reach the end
+    }
+    
     bool isAdditiveNumber(const string& num, int s1, int e1, int s2, int e2, int s3, int e3) const {
+        if ((num[s1] == '0' && (e1 - s1) != 1) ||
+            (num[s2] == '0' && (e2 - s2) != 1) ||
+            (num[s3] == '0' && (e3 - s3) != 1)) {
+            return false;
+        }
         int carry = 0; 
         while (e3 > s3 && e2 > s2 && e1 > s1) {
             int tgt = num[--e3] - '0';
@@ -108,7 +97,7 @@ private:
         }
         while (e3 > s3 && e1 > s1) {
             int tgt = num[--e3] - '0';
-            int sum = num[--e2] - '0' + carry;
+            int sum = num[--e1] - '0' + carry;
             if (tgt != (sum % 10)) {
                 return false;
             }
@@ -123,6 +112,6 @@ private:
 };
 
 int main() {
-  cout << (Solution().isAdditiveNumber("199100199")) << endl;
+  cout << (Solution().isAdditiveNumber("199111992") ? "yes" : "no") << endl;
   return 0;
 }

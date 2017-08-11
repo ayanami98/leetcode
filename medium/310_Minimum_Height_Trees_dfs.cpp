@@ -1,17 +1,3 @@
-/******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 310_Minimum_Height_Trees_dfs.cpp
-*
-* Created on : 2017-08-10
-* Author : tufeng
-*
-* Last Modified : Thu 10 Aug 2017 06:38:42 PM PST
-******************************************************************************/
-
 /*************************************************************************
  * For a undirected graph with tree characteristics, we can choose any node
  * as the root. The result graph is then a rooted tree. Among all possible

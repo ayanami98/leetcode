@@ -44,6 +44,19 @@
  * path between the root and a leaf.
  ************************************************************************************/
 
+ // It is easy to see that the root of an MHT has to be the middle point (or two middle points)
+ // of the longest path of the tree. Though multiple longest paths can appear in an unrooted
+ // tree, they must share the same middle point(s).
+ // 
+ // Computing the longest path of a unrooted tree can be done, in O(n) time, by tree dp, or
+ // simply 2 tree traversals (dfs or bfs).
+ // The following is some thought of the latter.
+ // Randomly select a node x as the root, do a dfs/bfs to find the node y that has the longest
+ // distance from x.
+ // Then y must be one of the endpoints on some longest path.
+ // Let y the new root, and do another dfs/bfs. Find the node z that has the longest distance
+ // from y.
+ // Now, the path from y to z is the longest one, and thus its middle point(s) is the answer
 
 
 #include <vector>

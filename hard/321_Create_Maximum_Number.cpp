@@ -1,17 +1,3 @@
-/******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 321_Create_Maximum_Number.cpp
-*
-* Created on : 2017-08-13
-* Author : tufeng
-*
-* Last Modified : Sun 13 Aug 2017 01:02:05 AM PST
-******************************************************************************/
-
 #include <vector>
 #include <queue>
 #include <iostream>

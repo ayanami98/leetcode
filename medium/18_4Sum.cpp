@@ -1,17 +1,3 @@
-/******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 18_4Sum.cpp
-*
-* Created on : 2017-08-16
-* Author : tufeng
-*
-* Last Modified : Wed 16 Aug 2017 01:45:31 PM PST
-******************************************************************************/
-
 /***********************************************************
  * Given an array S of n integers, are there elements a, b, c,
  * and d in S such that a + b + c + d = target? Find all unique

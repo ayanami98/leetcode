@@ -1,18 +1,4 @@
 /******************************************************************************
- * Copyright (c)  2017, GraphSQL Inc.                                      *
- * All rights reserved                                                        *
- * Unauthorized copying of this file, via any medium is strictly prohibited   *
- * Proprietary and confidential                                               *
- ******************************************************************************
-* File Name : 95_Unique_Binary_Search_Trees_II.cpp
-*
-* Created on : 2017-08-30
-* Author : tufeng
-*
-* Last Modified : Wed 30 Aug 2017 05:37:35 PM PST
-******************************************************************************/
-
-/******************************************************************************
  * Given an integer n, generate all structurally unique BST's (binary search trees)
  * that store values 1...n.
  *
